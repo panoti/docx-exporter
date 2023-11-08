@@ -1,6 +1,6 @@
 {
   "name": "docx-exporter",
-  "version": "0.0.1",
+  "version": "0.0.1-rc.1",
   "description": "Export docx to html, pdf",
   "author": "Thanh Pham <pnt239@gmail.com>",
   "repository": "https://github.com/panoti/docx-exporter.git",
