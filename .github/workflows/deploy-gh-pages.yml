@@ -10,7 +10,7 @@ on:
     #tags:
     #  - v*
     branches:
-      - master
+      - main
 
 jobs:
   deploy_pages:
@@ -26,9 +26,13 @@ jobs:
     - run: yarn docs
 
     - run: touch docs/.nojekyll
-    - name: Deploy docs 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: docs # The folder the action should deploy.
+        path: './docs'
+    - name: Deploy docs to GitHub Pages 🚀
+      id: deployment
+      uses: actions/deploy-pages@v2
