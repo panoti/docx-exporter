@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: ${{ matrix.nodejs }}
 
-    - run: yarn install
-    - run: yarn add -D esbuild
-    - run: yarn test
-    - run: yarn lint
-    - run: yarn build-all
+    - run: npm ci
+    - run: npm i -D esbuild
+    - run: npm run test
+    - run: npm run lint
+    - run: npm run build-all
